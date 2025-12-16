@@ -14,6 +14,7 @@ import Reports from "./AdminDashboard/Components/Reports/Reports";
 import Settings from "./AdminDashboard/Components/Setting/Settings";
 import Login from "./AdminDashboard/loginPage/Login";
 import Register from "./AdminDashboard/RegisterPage/Register";
+import ProtectedRoute from "../src/ProtectedRoute/ProtectedRoute"
 
 import Notification from "./AdminDashboard/Components/Notification/Notification";
 
@@ -30,9 +31,9 @@ const App = () => {
 
         <Route
           element={
-            // <ProtectedRoute>
+            <ProtectedRoute>
             <DashboardLayout />
-            // </ProtectedRoute>
+             </ProtectedRoute>
           }
         >
           <Route path="/dashboard" element={<AdminDashboard />} />
