@@ -69,8 +69,8 @@ const Navbar = () => {
               Contact
             </a>
 
-            <button className="w-full bg-indigo-600 text-white py-2 rounded-full font-medium hover:bg-indigo-700 transition">
-              Join as Pro
+               <button className="bg-indigo-600 text-white px-5 py-2 rounded-full font-medium hover:bg-indigo-700 transition">
+               <Link to="/login">Login</Link>
             </button>
           </div>
         </div>
