@@ -28,29 +28,29 @@ const Notification = () => {
   const [notifications, setNotifications] = useState([]);
 
   // Fetch users and notifications on component mount
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        // Fetch users for specific targeting
-        const usersResponse = await axios.get(
-          `${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/user`
-        );
-        setUsers(usersResponse.data);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       // Fetch users for specific targeting
+  //       const usersResponse = await axios.get(
+  //         `${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/user`
+  //       );
+  //       setUsers(usersResponse.data);
 
-        // Fetch notification history
-        const notificationsResponse = await axios.get(
-          `${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/save/token`
-        );
-        setNotifications(notificationsResponse.data);
-        console.log("notifications", notificationsResponse.data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-        toast.error("Failed to load data");
-      }
-    };
+  //       // Fetch notification history
+  //       const notificationsResponse = await axios.get(
+  //         `${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/save/token`
+  //       );
+  //       setNotifications(notificationsResponse.data);
+  //       console.log("notifications", notificationsResponse.data);
+  //     } catch (error) {
+  //       console.error("Error fetching data:", error);
+  //       toast.error("Failed to load data");
+  //     }
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
   const handleSend = async () => {
     if (!title.trim() || !message.trim()) {

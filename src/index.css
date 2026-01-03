@@ -3,3 +3,13 @@
 .dark {
   color-scheme: dark;
 }
+
+@layer components {
+  .nav-link {
+    @apply text-gray-700 font-medium hover:text-indigo-600 transition;
+  }
+
+  .mobile-link {
+    @apply block text-gray-800 font-medium text-lg hover:text-indigo-600 transition;
+  }
+}

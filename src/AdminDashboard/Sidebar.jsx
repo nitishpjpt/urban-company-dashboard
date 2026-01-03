@@ -18,7 +18,8 @@ import {
   Mic2,
   BellRing,
   BadgeIndianRupee,
-  Video
+  Video,
+  BellElectric
 } from "lucide-react";
 import {
   Music,
@@ -34,6 +35,7 @@ import {
 import React from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { MdHardware } from "react-icons/md";
 
 const menuItems = [
   {
@@ -42,9 +44,19 @@ const menuItems = [
     path: "/dashboard",
   },
   {
-    title: "Users",
+    title: "Partners",
     icon: <Users size={18} />,
     path: "/users",
+  },
+  {
+    title: "Electric Products",
+    icon: <BellElectric size={18} />,
+    path: "/electric-products",
+  },
+  {
+    title: "Hardware Products",
+    icon: <MdHardware size={18} />,
+    path: "/hardware-products",
   },
 
 

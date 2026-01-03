@@ -9,21 +9,21 @@ const Tips = () => {
   const [tipsData, setTipsData] = useState({ success: false, tips: [] });
   const [searchTerm, setSearchTerm] = useState("");
 
-  useEffect(() => {
-    const fetchTips = async () => {
-      try {
-        const res = await axios.get(
-          `${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/tips`
-        );
-        setTipsData(res.data);
-      } catch (error) {
-        toast.error("Failed to fetch tips");
-        console.error(error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchTips = async () => {
+  //     try {
+  //       const res = await axios.get(
+  //         `${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/tips`
+  //       );
+  //       setTipsData(res.data);
+  //     } catch (error) {
+  //       toast.error("Failed to fetch tips");
+  //       console.error(error);
+  //     }
+  //   };
 
-    fetchTips();
-  }, []);
+  //   fetchTips();
+  // }, []);
 
   const filteredTips = useMemo(() => {
     if (!tipsData.success) return [];

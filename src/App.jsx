@@ -17,8 +17,11 @@ import Register from "./AdminDashboard/RegisterPage/Register";
 import ProtectedRoute from "../src/ProtectedRoute/ProtectedRoute"
 
 import Notification from "./AdminDashboard/Components/Notification/Notification";
+import Main from "../src/Pages/Main"
 
 import Tips from "./AdminDashboard/Components/Tips/Tips";
+import ElectricProducts from "./AdminDashboard/Components/ElectricProduct/ElectricProducts";
+import HardwareProducts from "./AdminDashboard/Components/HardwareProducts/HardwareProducts";
 
 const App = () => {
   return (
@@ -28,6 +31,8 @@ const App = () => {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/" element={<Main/>} />
+
 
         <Route
           element={
@@ -38,12 +43,8 @@ const App = () => {
         >
           <Route path="/dashboard" element={<AdminDashboard />} />
           <Route path="/users" element={<Users />} />
-          {/* <Route path="/artists" element={<Artists />} />
-          <Route path="/tracks" element={<Tracks />} />
-          <Route path="/albums" element={<Albums />} />
-          <Route path="/playlists" element={<PlayLists />} />
-          <Route path="/genres" element={<Generes />} />
-          <Route path="/gif/generes" element={<GeneresGif/>} /> */}
+          <Route path="/electric-products" element={<ElectricProducts/>} />
+          <Route path="/hardware-products" element={<HardwareProducts/>} />
           <Route path="/analytics" element={<Analytics />} />
           <Route path="/send-notifications" element={<Notification />} />
           <Route path="/subscriptions" element={<Subscriptions />} />

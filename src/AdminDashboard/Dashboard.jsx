@@ -47,63 +47,63 @@ const Dashboard = () => {
   const [tips, setTips] = useState([]);
   const [totalTips,setTotalTips] = useState([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      setIsLoading(true);
-      try {
-        const [
-          genresRes,
-          playlistsRes,
-          albumsRes,
-          artistsRes,
-          usersRes,
-          trackRes,
-          growthRes,
-          tipsRes,
-        ] = await Promise.all([
-          axios.get(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/genres`),
-          axios.get(
-            `${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/playlists/all`
-          ),
-          axios.get(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/albums`),
-          axios.get(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/artist`),
-          axios.get(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/user`),
-          axios.get(
-            "https://api.jamendo.com/v3.0/tracks/?client_id=3e2494c0&format=json&limit=10"
-          ),
-          axios.get(
-            `${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/user/growth`
-          ),
-          axios.get(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/tips`),
-        ]);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     setIsLoading(true);
+  //     try {
+  //       const [
+  //         genresRes,
+  //         playlistsRes,
+  //         albumsRes,
+  //         artistsRes,
+  //         usersRes,
+  //         trackRes,
+  //         growthRes,
+  //         tipsRes,
+  //       ] = await Promise.all([
+  //         axios.get(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/genres`),
+  //         axios.get(
+  //           `${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/playlists/all`
+  //         ),
+  //         axios.get(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/albums`),
+  //         axios.get(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/artist`),
+  //         axios.get(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/user`),
+  //         axios.get(
+  //           "https://api.jamendo.com/v3.0/tracks/?client_id=3e2494c0&format=json&limit=10"
+  //         ),
+  //         axios.get(
+  //           `${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/user/growth`
+  //         ),
+  //         axios.get(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/tips`),
+  //       ]);
 
-        setGenres(genresRes.data.length);
-        setPlaylists(playlistsRes.data.length);
-        setAlbums(albumsRes.data.albums.length);
-        setArtists(artistsRes.data.length);
-        setUsers(usersRes.data.length);
-        setTracks(trackRes.data.results.length);
-        setUserGrowthData(growthRes.data);
-        setTips(tipsRes.data.tips);
-        setTotalTips(tipsRes.data.tips.length)
+  //       setGenres(genresRes.data.length);
+  //       setPlaylists(playlistsRes.data.length);
+  //       setAlbums(albumsRes.data.albums.length);
+  //       setArtists(artistsRes.data.length);
+  //       setUsers(usersRes.data.length);
+  //       setTracks(trackRes.data.results.length);
+  //       setUserGrowthData(growthRes.data);
+  //       setTips(tipsRes.data.tips);
+  //       setTotalTips(tipsRes.data.tips.length)
 
-        console.log("tips", tipsRes.data.tips);
-        console.log("Generes", genresRes.data.length);
-        console.log("playist", playlistsRes.data.length);
-        console.log("albums", albumsRes.data.albums.length);
-        console.log("artists", artistsRes.data.length);
-        console.log("user growth", growthRes.data);
-        console.log("users", usersRes.data.length);
-        console.log("tracks", trackRes.data.results.length);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-        toast.error("Failed to load data");
-      } finally {
-        setIsLoading(false);
-      }
-    };
-    fetchData();
-  }, []);
+  //       console.log("tips", tipsRes.data.tips);
+  //       console.log("Generes", genresRes.data.length);
+  //       console.log("playist", playlistsRes.data.length);
+  //       console.log("albums", albumsRes.data.albums.length);
+  //       console.log("artists", artistsRes.data.length);
+  //       console.log("user growth", growthRes.data);
+  //       console.log("users", usersRes.data.length);
+  //       console.log("tracks", trackRes.data.results.length);
+  //     } catch (error) {
+  //       console.error("Error fetching data:", error);
+  //       toast.error("Failed to load data");
+  //     } finally {
+  //       setIsLoading(false);
+  //     }
+  //   };
+  //   fetchData();
+  // }, []);
 
 
   const revenueData = [
@@ -182,7 +182,7 @@ const Dashboard = () => {
                 darkMode ? "text-green-400" : "text-green-600"
               }`}
             />
-            <h1 className="text-2xl font-bold">TuneNest Admin Dashboard</h1>
+            <h1 className="text-2xl font-bold"> Admin Dashboard</h1>
           </div>
         </div>
 
