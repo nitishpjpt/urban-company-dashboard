@@ -13,7 +13,7 @@ import {
   Sun,
   Moon,
 } from "lucide-react";
-import Sidebar from "../sidebar"
+import Sidebar from "../Sidebar.jsx";
 import React from "react";
 import { FiSearch } from "react-icons/fi";
 import {
